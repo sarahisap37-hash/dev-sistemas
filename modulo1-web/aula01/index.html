@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de cadastro</title>
+</head>
+<body>
+    <header>
+        <h1>Sistema de cadastro</h1>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Cadastro</a>
+            <a href="#">Relatórios</a>
+        </nav>
+        <main>
+            <section id="cadastro">
+                <h2>Novo cadastro</h2>
+                <form id="form-cadastro" action="" method="post" novalidate>
+                    <fieldset>
+                        <legend>Informações pessoais</legend>
+                        <div> class="campo">
+                            <label for="nome">Nome completo</label>
+                            <input type="text" id="nome" name="nome" required
+                             placeholder="Ex: Sarah Linda">
+                             required minlength="3" maxlength="100">
+
+                        </div>
+                    </fieldset>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="cargo">Cargo:</label>
+                    <input type="text" id="cargo" name="cargo" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <button type="submit">Cadastrar</button>
+                
+                </form>
+
+                
+
+
+
+            
+            </section>
+            <section id="lista">
+                <h2>Lista de cadastros realizados</h2>
+                <article class="card-cadastro">
+                    <h3>Sarah linda</h3>
+                    <p><strong>Cargo:</strong> Desenvolvedora</p>
+                    <p><strong>Email:</strong> sarah.linda@example.com</p>
+                    <time datetime="2026-08-10">10 de agosto de 2026</time>
+                </article>
+                <p> Lista de cadastros inserida aqui</p>
+            </section>
+        </main>
+        <footer>
+            <p>SESI / SENAI SIG-DF &copy;2026</p>
+        </footer>
+    </header>
+    
+</body>
+</html>

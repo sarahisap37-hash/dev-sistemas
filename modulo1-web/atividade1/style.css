@@ -1,0 +1,132 @@
+:root {
+    --cor-primaria: #0056b3;
+    --cor-secundaria: #f8f9fa;
+    --cor-texto: #333333;
+    --cor-borda: #cccccc;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: var(--cor-texto);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--cor-sombra);
+    width: 100%;
+    max-width: 400px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.lembrar-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 5px 0;
+}
+
+.lembrar-box input {
+    cursor: pointer;
+}
+
+.lembrar-box label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+form button {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px;
+    border: 2px solid var(--cor-borda);
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px var(--cor-sombra);
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-1px);
+}
+
+form a {
+    text-align: center;
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666666;
+}
