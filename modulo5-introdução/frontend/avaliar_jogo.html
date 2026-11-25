@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliar Jogo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8eaf6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        textarea, input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #4a47a3;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #29266e;
+        }
+
+        .erro {
+            color: red;
+            font-size: 14px;
+        }
+
+        .sucesso {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Avaliar Jogo</h1>
+
+        <form id="formAvaliacao" novalidate>
+
+            <label for="comentario">Comentário:</label>
+            <textarea
+                id="comentario"
+                placeholder="Digite seu comentário"
+                rows="4">
+            </textarea>
+
+            <p id="erroComentario" class="erro"></p>
+
+            <label for="nota">Nota (1 a 5):</label>
+            <input
+                type="number"
+                id="nota"
+                placeholder="Digite uma nota de 1 a 5"
+                min="1"
+                max="5"
+            >
+
+            <p id="erroNota" class="erro"></p>
+
+            <button type="submit">Enviar Avaliação</button>
+
+            <p id="mensagemSucesso" class="sucesso"></p>
+
+        </form>
+
+    </div>
+
+    <script>
+        const formulario = document.getElementById("formAvaliacao");
+
+        formulario.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            // Ler os valores dos campos
+            const comentario = document.getElementById("comentario").value.trim();
+            const nota = Number(document.getElementById("nota").value);
+
+            // Limpar mensagens anteriores
+            document.getElementById("erroComentario").textContent = "";
+            document.getElementById("erroNota").textContent = "";
+            document.getElementById("mensagemSucesso").textContent = "";
+
+            let valido = true;
+
+            // Validar comentário
+            if (comentario === "") {
+                document.getElementById("erroComentario").textContent =
+                    "O comentário não pode ficar vazio.";
+                valido = false;
+            }
+
+            // Validar nota
+            if (nota < 1 || nota > 5 || document.getElementById("nota").value === "") {
+                document.getElementById("erroNota").textContent =
+                    "A nota deve ser um número entre 1 e 5.";
+                valido = false;
+            }
+
+            // Se tudo estiver válido
+            if (valido) {
+
+                console.log({
+                    comentario,
+                    nota
+                });
+
+                document.getElementById("mensagemSucesso").textContent =
+                    "Avaliação enviada com sucesso!";
+
+                formulario.reset();
+            }
+
+        });
+    </script>
+
+</body>
+</html>
